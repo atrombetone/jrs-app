@@ -1,0 +1,41 @@
+.card-os {
+  height: 80vh;
+}
+
+@media only screen and (max-width: 450px) {
+  .w10 {
+    width: 100%;
+  }
+
+  .w20 {
+    width: 45%;
+  }
+
+  .w25 {
+    width: 100%;
+  }
+
+  .w30 {
+    width: 100%;
+  }
+
+  .w33 {
+    width: 100%;
+  }
+
+  .w40 {
+    width: 100%;
+  }
+
+  .w50 {
+    width: 100%;
+  }
+
+  .w75 {
+    width: 100%;
+  }
+
+  .w80 {
+    width: 100%;
+  }
+}

@@ -1,0 +1,12 @@
+
+.ls-avatar {
+  width: 100px;
+  height: auto;
+  border-radius: 50%;
+  float: left;
+}
+
+.div-loading {
+  padding-top: 20%;
+  padding-left: calc(50% - 50px);
+}

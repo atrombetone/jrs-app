@@ -1,0 +1,15 @@
+<div *ngIf="isLoading" class="div-loading">
+  <mat-spinner ></mat-spinner>
+</div>
+<mat-card class="list-card" *ngIf="!isLoading">
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item *ngFor="let c of colabs" style="cursor: pointer" (click)="detalharColaborador(c.id)">
+          <img matListAvatar src="../../../../assets/colabs/{{c.id}}.png" alt="">
+          <h2 mat-line style="font-weight: bold">{{c.nmLogin}}</h2>
+          <p mat-line>{{c.nmComplete}} </p>
+          <p mat-line><mat-icon aria-hidden="false" aria-label="Example home icon">phone</mat-icon> {{c.nuFone}} {{c.tpDepartment}}</p>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>

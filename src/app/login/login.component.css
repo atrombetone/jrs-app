@@ -1,0 +1,59 @@
+
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.background-login {
+
+  height: 100vh;
+  margin: 0px;
+  /*background-image: url('../../assets/fundo.jpg');
+  background-repeat: no-repeat;*/
+  text-align: center;
+  background: #0f0c29;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.top-space {
+  height: 40px;
+  width: 100%;
+}
+.login-card {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: 360px;
+  min-width: 360px;
+  height: 400px;
+  position: absolute;
+  top: 20%;
+}
+
+
+.mat-form-field {
+    display: flow-root;
+}
+
+.example-container {
+  padding-top: 40px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 400px)
+{
+  .login-card {
+    width: 400px;
+    left: calc(50% - 200px);
+  }
+}
+
+@media (max-width: 400px)
+{
+  .login-card {
+    position: relative;
+  }
+}

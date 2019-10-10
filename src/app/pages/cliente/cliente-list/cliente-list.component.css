@@ -1,0 +1,32 @@
+.ls-avatar {
+  font-size: 1.5rem;
+  padding: 10px;
+  color: #fff;
+  background-color: gray;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+.mat-list-item {
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+.mat-line {
+  margin: 0px !important;
+}
+
+.div-loading {
+  padding-top: 20%;
+  padding-left: calc(50% - 50px);
+}
+
+.w80 {
+  margin-right: 15px;
+}
+@media only screen and (max-width: 450px) {
+  .w80 {
+    width: 65%;
+    margin-right: 10px;
+  }
+}

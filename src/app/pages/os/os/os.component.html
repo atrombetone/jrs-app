@@ -1,0 +1,85 @@
+<div class="sp-load" *ngIf="isLoading">
+  <mat-spinner></mat-spinner>
+</div>
+<form [formGroup]="formOS" novalidate #form="ngForm">
+  <mat-card class="list-card card-os">
+    <mat-card-content>
+      <mat-tab-group>
+        <mat-tab label="Dados">
+          <div class="row" style="margin-top: 15px;">
+            <div class="col">
+              <mat-form-field class="w20">
+                <input matInput placeholder="N° OS" formControlName="nuDocumento" readonly>
+              </mat-form-field>
+              <mat-form-field class="w20">
+                <input matInput placeholder="Emissão" formControlName="dtEmisao" readonly>
+              </mat-form-field>
+              <!-- <mat-form-field class="w10">
+                      <input matInput placeholder="Cód Cliente" formControlName="idCliente" readonly>
+                    </mat-form-field> -->
+              <mat-form-field class="w80">
+                <input matInput placeholder="Cliente" formControlName="nmCliente" readonly>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <mat-form-field class="w40">
+                <input matInput placeholder="Colaborador" formControlName="nmColaborador" readonly>
+              </mat-form-field>
+
+              <mat-form-field class="w20">
+                <input matInput placeholder="Finalização" formControlName="dtFinalizacao" readonly>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <mat-form-field class="w20">
+              <input matInput placeholder="Previsão" formControlName="dtPrevisao" readonly>
+            </mat-form-field>
+            <!-- <mat-form-field class="w20">
+                    <input matInput placeholder="Programação" formControlName="dtProgramacao" readonly>
+                  </mat-form-field>
+                  <mat-form-field class="w20">
+                    <input matInput placeholder="Teste" formControlName="dtTeste" readonly>
+                  </mat-form-field>
+                  <mat-form-field class="w20">
+                    <input matInput placeholder="Treinamento" formControlName="dtTreinamento" readonly>
+                  </mat-form-field>-->
+            <mat-form-field class="w20">
+              <input matInput placeholder="Tipo de Serviço" formControlName="dsStatus" readonly>
+            </mat-form-field>
+            <div class="row">
+              <mat-form-field class="full-width">
+                <textarea matInput rows="8" placeholder="Resumo" formControlName="dsAssunto" readonly></textarea>
+              </mat-form-field>
+            </div>
+          </div>
+        </mat-tab>
+        <mat-tab label="Serviços">
+          <div class="row">
+            <mat-form-field class="full-width">
+              <textarea matInput rows="30" placeholder="Serviço" formControlName="dsServico" readonly></textarea>
+            </mat-form-field>
+          </div>
+
+        </mat-tab>
+        <mat-tab label="Serv. Interno">
+          <div class="row">
+            <mat-form-field class="full-width">
+              <textarea matInput rows="30" placeholder="Serviço Interno" formControlName="dsServicoInterno"
+                readonly></textarea>
+            </mat-form-field>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+
+
+
+
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" [routerLink]="['/oss']">&lt;&lt; Voltar</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

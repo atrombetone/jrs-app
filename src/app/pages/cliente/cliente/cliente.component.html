@@ -1,0 +1,98 @@
+<form [formGroup]="formCliente" novalidate #form="ngForm">
+  <mat-card class="list-card">
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Razão Social" formControlName="nmRazaoSocial" readonly>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Fantasia" formControlName="nmFantasia" readonly>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="w80">
+            <input matInput placeholder="Endereço" formControlName="dsLogradouro" readonly>
+          </mat-form-field>
+          <mat-form-field class="w20">
+            <input matInput placeholder="N°" formControlName="nuLogradouro" readonly>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Complemento" formControlName="dsComplemento" readonly>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="w33">
+            <input matInput placeholder="Bairro" formControlName="nmBairro" readonly>
+          </mat-form-field>
+          <mat-form-field class="w30">
+            <input matInput placeholder="Cidade" formControlName="nmCidade" readonly>
+          </mat-form-field>
+          <mat-form-field class="w10">
+            <input matInput placeholder="UF" formControlName="sgEstado" readonly>
+          </mat-form-field>
+          <mat-form-field class="w20">
+            <input matInput placeholder="Cel" formControlName="nuCep" readonly>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="w30">
+            <input matInput placeholder="Fone" formControlName="nuFone" readonly>
+          </mat-form-field>
+          <mat-form-field class="w33">
+            <input matInput placeholder="CNPJ" formControlName="nuCnpj" readonly>
+          </mat-form-field>
+          <mat-form-field class="w33">
+            <input matInput placeholder="Insc. Estadual" formControlName="nuIE" readonly>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="w50">
+            <input matInput placeholder="Email" formControlName="dsEmail" readonly>
+          </mat-form-field>
+          <mat-form-field class="w50">
+            <input matInput placeholder="Home" formControlName="dsHome" readonly>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="w30">
+            <input matInput placeholder="Situação" formControlName="dsSituacao" readonly>
+          </mat-form-field>
+          <mat-form-field class="w33">
+            <input matInput placeholder="Senhanet" formControlName="dsSenhanet" readonly>
+          </mat-form-field>
+          <mat-form-field class="w33">
+            <input matInput placeholder="Contato" formControlName="nmContato" readonly>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <mat-form-field class="full-width">
+          <textarea matInput placeholder="Observação" rows="10" formControlName="dsObservacao" readonly></textarea>
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+    <mat-card-actions style="text-align: right">
+        <button mat-raised-button color="primary" [routerLink]="['/clientes']">&lt;&lt; Voltar</button>
+        <a  mat-raised-button href="{{linkWaze}}" target="blank"><img src="../../../../assets/waze-ico.png" class="waze-ico" /> Abrir navegador</a>
+    </mat-card-actions>
+  </mat-card>
+</form>

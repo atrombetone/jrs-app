@@ -1,0 +1,112 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.fill-spacer {
+  flex: 1 1 auto;
+}
+
+.sp-load {
+  position:fixed;
+  top:50%;
+  left: calc(50% - 50px);
+}
+
+
+.full-width {
+  width: 100%;
+}
+
+.w10 {
+  width: calc(10% - 10px);
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.w20 {
+  width: calc(20% - 10px);
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.w25 {
+  width: calc(25% - 10px);
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.w30 {
+  width: calc(30% - 10px);
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.w33 {
+  width: calc(33% - 10px);
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.w40 {
+  width: calc(40% - 10px);
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.w50 {
+width: 49%;
+}
+
+.w75 {
+width: 74%;
+}
+
+.w80 {
+width: 79%;
+}
+
+
+.os-card {
+  max-width: 500px;
+  min-width: calc((100% / 5) - 50px);
+  margin: 18px;
+  float: left;
+}
+
+.mat-card-subtitle {
+  width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ok {
+  background: #76b852;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #8DC26F, #76b852);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #8DC26F, #76b852); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.hoje {
+  background: #FFB75E;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #ED8F03, #FFB75E);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #ED8F03, #FFB75E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.atrasada {
+  background: #e52d27;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #b31217, #e52d27);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #b31217, #e52d27); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+@media (max-width: 500px)
+{
+  .os-card {
+    width: calc(100% - 60px);
+  }
+
+  .mat-card-subtitle {
+    width: 200px;
+  }
+}

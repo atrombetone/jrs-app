@@ -1,0 +1,22 @@
+<div class="background-login">
+  <mat-card class="login-card mat-elevation-z8" style="text-align: center;">
+    <mat-card-header style="padding-top: 20px; padding-bottom: 20px;">
+      <img class="img-responsive" src="../../assets/logojrs.png" alt="">
+    </mat-card-header>
+    <mat-card-content>
+      <div class="example-container">
+        <form [formGroup]="loginForm" style="width: 100%">
+        <mat-form-field>
+          <input matInput #input placeholder="Email" formControlName="login" type="email">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput #input mixlength="3" placeholder="Senha de acesso" type="password" formControlName="senha">
+        </mat-form-field>
+        </form>
+      </div>
+    </mat-card-content>
+    <mat-card-actions style="text-align: right; padding: 15px;">
+      <a mat-raised-button color="primary" (click)="efetuarLogin()">Entrar</a>
+    </mat-card-actions>
+  </mat-card>
+</div>

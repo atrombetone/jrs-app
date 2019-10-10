@@ -1,0 +1,108 @@
+<div class="sp-load" *ngIf="isLoading">
+  <mat-spinner></mat-spinner>
+</div>
+
+<mat-accordion>
+  <mat-expansion-panel [expanded]="expandido" (opened)="showPesquisa()">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Pesquisa
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-card>
+      <mat-card-content>
+        <form [formGroup]="formPesquisa" class="full-width" novalidate #form="ngForm">
+          <div class="row">
+            <div class="col">
+              <mat-form-field class="full-width">
+                <input matInput [matDatepicker]="picker" placeholder="Dt Início" formControlName="DtInicio">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <mat-form-field class="full-width">
+                <input matInput [matDatepicker]="picker1" placeholder="Dt Final" formControlName="DtFinal">
+                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1></mat-datepicker>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <mat-radio-group class="os-radio-group" formControlName="DsStatus">
+                <mat-radio-button class="os-radio-button" value="T">Todas</mat-radio-button>
+                <mat-radio-button class="os-radio-button" value="F">Fechadas</mat-radio-button>
+                <mat-radio-button class="os-radio-button" value="A">Abertas</mat-radio-button>
+              </mat-radio-group>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <mat-form-field class="full-width">
+                <input matInput placeholder="N° Ordem Serviço" formControlName="NuOrdemServico">
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <mat-form-field class="full-width" name="autocomplete-cliente">
+                <input type="text" placeholder="Cliente" matInput [formControl]="acCliente" [matAutocomplete]="auto">
+                <mat-autocomplete #auto="matAutocomplete">
+                  <mat-option *ngFor="let cliente of filteredOptions | async" [value]="cliente">
+                    {{ cliente }}
+                  </mat-option>
+                </mat-autocomplete>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <mat-form-field class="full-width" name="autocomplete-colaborador">
+                <input type="text" placeholder="Colaborador" matInput [formControl]="acColab" [matAutocomplete]="auto">
+                <mat-autocomplete #auto="matAutocomplete">
+                  <mat-option *ngFor="let colab of filteredColabs | async" [value]="colab">
+                    {{colab}}
+                  </mat-option>
+                </mat-autocomplete>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <mat-form-field class="full-width">
+                <mat-label>Serviços</mat-label>
+                <mat-select formControlName="InServico" multiple>
+                  <mat-option *ngFor="let servico of servicos" [value]="servico">{{ servico }}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+        </form>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="executarPesquisa()">Pesquisar</button>
+        <button mat-raised-button (click)="minhasOSs()">Minhas OSs</button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-expansion-panel>
+</mat-accordion>
+
+<mat-card class="os-card" [ngClass]="os.dsSituacao" *ngFor="let os of listaOss" style="cursor: pointer"
+  (click)="visualizarOS(os.id)">
+  <mat-card-header>
+    <mat-card-title>{{ os.nuDocumento }}</mat-card-title>
+    <mat-card-subtitle>{{ os.nmCliente }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <span>
+      <b>Emissão:</b> {{os.dtEmisao | date: 'dd/MM/yyyy'}}
+    </span>
+    <span class=fill-spacer></span>
+    <span>
+      <b>Previsão:</b> {{os.dtProgramacao | date: 'dd/MM/yyyy' }}
+    </span>
+  </mat-card-content>
+</mat-card>

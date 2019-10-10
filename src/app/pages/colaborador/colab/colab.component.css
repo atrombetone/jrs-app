@@ -1,0 +1,26 @@
+
+.mat-list-avatar {
+  width: 120px !important;
+  height: 120px !important;
+  float: left;
+  margin-top: 50px;
+}
+
+.img-portrait {
+  float: left;
+  width: 300px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.div-voltar {
+  float: left;
+  width: 100%;
+  height: 40px;
+  cursor: pointer;
+  background-color: #ccc;
+}
+
+.list-card {
+  margin-top: 80px !important;
+}

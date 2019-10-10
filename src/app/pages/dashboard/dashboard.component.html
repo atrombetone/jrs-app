@@ -1,0 +1,57 @@
+<div class="sp-load" *ngIf="isLoading">
+  <mat-spinner></mat-spinner>
+</div>
+  <div class="grid-container" *ngIf="!isLoading">
+  <mat-card>
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item *ngFor="let item of dados.emMeuNome">
+          <span>{{item.titulo}}</span>
+          <span class="fill-spacer"></span>
+          <span><h3>{{item.qtdade}}</h3></span>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+
+  <h3 *ngIf="dados.ossUrgentes.length > 0" >Urgentes</h3>
+  <mat-card class="os-card" [ngClass]="os.dsSituacao" *ngFor="let os of dados.ossUrgentes" style="cursor: pointer"  (click)="visualizarOS(os.id)">
+    <mat-card-header>
+      <mat-card-title>{{ os.nuDocumento }}</mat-card-title>
+      <mat-card-subtitle>{{ os.nmCliente }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <span>
+        <b>Emissão:</b> {{os.dtEmisao | date: 'dd/MM/yyyy'}}
+      </span>
+    </mat-card-content>
+  </mat-card>
+  <h3 *ngIf="dados.prometidaParaHoje.length > 0" >Prometidas para hoje</h3>
+  <mat-card class="os-card" [ngClass]="os.dsSituacao" *ngFor="let os of dados.prometidaParaHoje" style="cursor: pointer"  (click)="visualizarOS(os.id)">
+    <mat-card-header>
+      <mat-card-title>{{ os.nuDocumento }}</mat-card-title>
+      <mat-card-subtitle>{{ os.nmCliente }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <span>
+        <b>Emissão:</b> {{os.dtEmisao | date: 'dd/MM/yyyy'}}
+      </span>
+      <span class=fill-spacer></span>
+      <span>
+        <b>Previsão:</b> {{os.dtProgramacao | date: 'dd/MM/yyyy' }}
+      </span>
+    </mat-card-content>
+  </mat-card>
+  <h3>Horas Lançadas</h3>
+  <mat-card>
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item *ngFor="let hr of dados.horaDoMes">
+          <span mat-line>Dia: {{hr.dia}} | Horas: {{hr.horas}}</span>
+          <mat-progress-bar mat-line mode="determinate" value="{{hr.pcDia}}"></mat-progress-bar>
+        </mat-list-item>
+      </mat-list>
+
+    </mat-card-content>
+  </mat-card>
+</div>

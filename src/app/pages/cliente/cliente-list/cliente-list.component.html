@@ -1,0 +1,29 @@
+<div class="div-loading" *ngIf="isLoading">
+  <mat-spinner></mat-spinner>
+</div>
+<mat-card class="list-card" *ngIf="!isLoading">
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item style="background-color: #ccc">
+        <form [formGroup]="formPesquisa" novalidate #form="ngForm" class="full-width">
+          <div class="row">
+            <div class="col">
+              <mat-form-field class="w80">
+                <input type="search" matInput placeholder="Código, Razão social ou Fantasia" formControlName="txtPesquisa">
+              </mat-form-field>
+              <button mat-raised-button color="primary" (click)="executarPesquisa()">Pesquisar</button>
+            </div>
+          </div>
+        </form>
+      </mat-list-item>
+      <mat-list-item *ngFor="let c of clientes" style="cursor: pointer" (click)="detalharCliente(c.id)">
+          <div mat-col class="ls-avatar" >{{c.sgCliente}}</div>
+          <div mat-col>
+            <h4 mat-line style="font-weight: bold">{{c.nmRazaoSocial}}</h4>
+            <p mat-line>{{c.nmFantasia}} </p>
+            <p mat-line><mat-icon aria-hidden="false" aria-label="Example home icon">phone</mat-icon> {{c.nuFone}} {{c.dsEmail}}</p>
+          </div>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
